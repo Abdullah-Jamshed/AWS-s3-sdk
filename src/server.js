@@ -1,19 +1,26 @@
 import express from "express";
 import route from "./routes/index.js";
+import path from "path";
+import { config } from "dotenv";
 
+config();
 
 const app = express();
+// const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.set("port", 3000);
 
-app.use("/api/", route);
+// template engine
+app.set("view-engine", "ejs");
+
+app.set("port", process.env.PORT || 3000);
+
+// ROUTES
+app.use("/api/image", route);
 
 app.get("/", (req, res) => {
-  res.json({
-    status: "Server is Working",
-  });
+  res.render("index.ejs");
 });
 
 app.listen(app.get("port"), () => {
