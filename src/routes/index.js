@@ -8,7 +8,7 @@ import { imageUpload } from "../controller/index.js";
 
 const storage = multer.memoryStorage({
   destination(req, file, cb) {
-    cb(null, "uploads/");
+    cb(null, "");
   },
 });
 
