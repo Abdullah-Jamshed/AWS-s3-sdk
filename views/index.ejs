@@ -27,8 +27,8 @@
 <body>
     <div class="container">
         <h1><span style="color: #ff9901;">AWS</span> S3-SDK</h1>
-        <form action="/upload" method="post">
-            <input type="file" class="btn btn-primary" name="image" id="image">
+        <form action="/api/image" method="post" enctype="multipart/form-data">
+            <input type="file" class="btn btn-primary" name="image" id="my-image" >
             <button type="submit" class="btn btn-primary"> Upload</button>
         </form>
     </div>

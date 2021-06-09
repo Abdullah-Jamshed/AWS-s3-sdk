@@ -23,6 +23,10 @@ app.get("/", (req, res) => {
   res.render("index.ejs");
 });
 
+app.use("*", (req, res) => {
+  res.status(404).send('<h1>Not Found</h1>');
+});
+
 app.listen(app.get("port"), () => {
   console.log(`Express Started on: http://localhost:${app.get("port")}`);
 });
