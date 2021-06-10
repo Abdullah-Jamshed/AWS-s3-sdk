@@ -5,9 +5,7 @@ import path from "path";
 import dotenv from "dotenv";
 dotenv.config()
 
-
 const app = express();
-// const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -31,3 +29,20 @@ app.use("*", (req, res) => {
 app.listen(app.get("port"), () => {
   console.log(`Express Started on: http://localhost:${app.get("port")}`);
 });
+
+// const express = require("express");
+
+// const app = express();
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
+// app.set("port", process.env.PORT || 3000);
+
+// app.get("/", (req, res) => {
+//   res.json({
+//     status: "OK",
+//   });
+// });
+
+// app.listen(app.get("port"), () => {
+//   console.log(`Express Started on: http://localhost:${app.get("port")}`);
+// });

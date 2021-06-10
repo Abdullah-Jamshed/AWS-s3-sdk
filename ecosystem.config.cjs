@@ -1,8 +1,8 @@
-export default {
-  app: [
+module.exports = {
+  apps: [
     {
       name: "server",
-      script: "./src/server.js",
+      script: `${__dirname}/src/server.js`,
       env: {
         NODE_ENV: process.env.NODE_ENV || "development",
         PORT: process.env.PORT,
