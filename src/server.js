@@ -1,9 +1,8 @@
 import express from "express";
 import route from "./routes/index.js";
-import path from "path";
 
 import dotenv from "dotenv";
-dotenv.config()
+dotenv.config();
 
 const app = express();
 
@@ -23,26 +22,9 @@ app.get("/", (req, res) => {
 });
 
 app.use("*", (req, res) => {
-  res.status(404).send('<h1>Not Found</h1>');
+  res.status(404).send("<h1>Not Found</h1>");
 });
 
 app.listen(app.get("port"), () => {
   console.log(`Express Started on: http://localhost:${app.get("port")}`);
 });
-
-// const express = require("express");
-
-// const app = express();
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
-// app.set("port", process.env.PORT || 3000);
-
-// app.get("/", (req, res) => {
-//   res.json({
-//     status: "OK",
-//   });
-// });
-
-// app.listen(app.get("port"), () => {
-//   console.log(`Express Started on: http://localhost:${app.get("port")}`);
-// });
