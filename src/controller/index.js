@@ -19,8 +19,6 @@ export const imageUpload = (req, res) => {
           })
         : new AWS.S3();
 
-    console.log(req.file);
-
     const params = {
       Bucket: process.env.BUCKET_NAME,
       Key: `${uuid()}${path.extname(fileName)}`,
