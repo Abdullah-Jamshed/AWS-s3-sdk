@@ -12,9 +12,9 @@ export const imageUpload = (req, res) => {
     const awsS3 =
       process.env.NODE_ENV === "development"
         ? new AWS.S3({
-            credentials: {
-              accessKeyId: process.env.ACCESS_KEY,
-              secretAccessKey: process.env.SECRET_ACCESS_KEY,
+            credentials: {                                            // pickup credentials from aws config automattically
+              // accessKeyId: process.env.ACCESS_KEY,  
+              // secretAccessKey: process.env.SECRET_ACCESS_KEY,
             },
           })
         : new AWS.S3();
